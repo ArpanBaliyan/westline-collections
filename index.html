@@ -1,0 +1,175 @@
+<title>Westline Collections Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<style>
+/* Layout: one reading column; a results strip, then four project rows that each pair a description with what it proves and where to open it */
+:root{
+  --bg:#EEF1F5; --surface:#FFFFFF; --ink:#0E1726; --ink-2:#3D4A5C; --muted:#5A6576; --rule:#D9DEE6;
+  --accent:#2457A6; --accent-soft:#E3EBF7; --good:#1D7F47;
+  --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans:'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
+  --mono:'IBM Plex Mono', Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1420; --surface:#151E2C; --ink:#E8ECF2; --ink-2:#B8C2D0; --muted:#8F9AAB; --rule:#263244;
+  --accent:#7FA7E8; --accent-soft:#1B2A44; --good:#5CC48A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1420; --surface:#151E2C; --ink:#E8ECF2; --ink-2:#B8C2D0; --muted:#8F9AAB; --rule:#263244;
+  --accent:#7FA7E8; --accent-soft:#1B2A44; --good:#5CC48A; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding-block:56px 72px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));display:flex;flex-direction:column;gap:48px}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,48px);line-height:1.1;margin:10px 0 16px;text-wrap:balance}
+h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.2;margin:0;text-wrap:balance}
+h3{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+p{margin:0}
+.lead{font-size:18px;color:var(--ink-2);max-width:68ch}
+.note{font-size:14px;color:var(--muted);margin-top:12px;max-width:68ch}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--surface);border:1px solid var(--rule);border-radius:10px}
+.stat{padding:20px 22px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.stat + .stat{border-left:1px solid var(--rule)}
+.stat .k{font-size:13.5px;color:var(--muted)}
+.stat .v{font-family:var(--serif);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.15}
+.stat .v span{color:var(--muted);font-weight:500}
+.stat .v b{color:var(--accent);font-weight:600}
+.stat .s{font-size:13px;color:var(--muted)}
+.loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.loop div{border-top:2px solid var(--accent);padding-top:10px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.loop .t{font-weight:600}
+.loop .d{font-size:14px;color:var(--ink-2)}
+.projects{display:flex;flex-direction:column;gap:20px}
+.project{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:28px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:32px}
+.project .main{display:flex;flex-direction:column;gap:14px;min-width:0}
+.kind{font-family:var(--mono);font-size:12.5px;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px;align-self:flex-start}
+.project .main p{color:var(--ink-2);max-width:62ch}
+.side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.side ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px;display:flex;flex-direction:column;gap:6px}
+.skills{font-size:13.5px;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14.5px;text-decoration:none;padding:9px 14px;border-radius:6px;border:1px solid var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--surface)}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer{font-size:13.5px;color:var(--muted);border-top:1px solid var(--rule);padding-top:20px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:760px){
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){border-left:none}
+  .stat:nth-child(n+3){border-top:1px solid var(--rule)}
+  .loop{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:20px}
+  .project{grid-template-columns:minmax(0,1fr);gap:20px;padding:22px}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Portfolio · Credit &amp; Collections</p>
+    <h1>Running a B2B collections desk, end to end</h1>
+    <p class="lead">Four working projects built around one company: Westline Auto Parts, a four-yard auto parts distributor in California that sells on credit to body shops and garages. Together they cover the daily desk, the month-end close, the causes of disputes, and how the team is trained.</p>
+    <p class="note">Westline is fictional. Every account, invoice, call and dispute comes from one synthetic simulation, so the numbers agree across all four projects. No real customer data is used.</p>
+  </header>
+
+  <section aria-label="Headline results" class="strip">
+    <div class="stat"><span class="k">October collections</span><span class="v"><b>166%</b></span><span class="s">On pace against the $400K monthly target</span></div>
+    <div class="stat"><span class="k">Balances over 60 days</span><span class="v">27.1% <span>→</span> <b>5.4%</b></span><span class="s">April 2025 to October 2026</span></div>
+    <div class="stat"><span class="k">Card chargebacks a month</span><span class="v">12.6 <span>→</span> <b>3.8</b></span><span class="s">After fixing refund hand-offs</span></div>
+    <div class="stat"><span class="k">Dials per specialist a day</span><span class="v">49 <span>→</span> <b>85</b></span><span class="s">With more calls reaching the payer</span></div>
+  </section>
+
+  <section aria-label="How the projects fit together" style="display:flex;flex-direction:column;gap:16px">
+    <h3>How they fit together</h3>
+    <div class="loop">
+      <div><span class="t">Every day</span><span class="d">The dashboard and workbook rank who to call and why.</span></div>
+      <div><span class="t">Every month</span><span class="d">The close ties the ledger out and sorts every open invoice.</span></div>
+      <div><span class="t">When things break</span><span class="d">The root-cause map traces disputes back to the failed hand-off.</span></div>
+      <div><span class="t">For every hire</span><span class="d">The playbook turns all of it into how the team works.</span></div>
+    </div>
+  </section>
+
+  <section class="projects" aria-label="Projects">
+    <article class="project">
+      <div class="main">
+        <span class="kind">Dashboard · Google Sheets · Apps Script</span>
+        <h2>Collections Desk dashboard and AR workbook</h2>
+        <p>A morning view of the desk: cash against target, the age of open invoices, risk by yard, and a ranked list of who to call first and what to do. Behind it sits a live Google Sheets workbook in which every age, priority score and next action is a formula, plus a script that refreshes it each morning and emails the summary.</p>
+        <div class="links">
+          <a class="btn primary" href="dashboard/" target="_blank" rel="noopener">Open the dashboard</a>
+          <a class="btn" href="https://docs.google.com/spreadsheets/d/1sFlLS6mAK7cFcEKEgzpgrn-WLVm3QvnApi9Bqa14p3Q/view" target="_blank" rel="noopener">Open the workbook</a>
+          <a class="btn" href="automation/Westline_AR_Automation.gs" target="_blank" rel="noopener">View the Apps Script</a>
+        </div>
+      </div>
+      <div class="side">
+        <h3>What it shows</h3>
+        <ul>
+          <li>A priority score that weighs amount, age, missed promises, silence and risk</li>
+          <li>One next action per account: card ask, promise follow-up, demand letter, small-claims review</li>
+          <li>Team scorecard and a log of requests from other departments, each with a 4-hour service level</li>
+        </ul>
+        <p class="skills">Accounts receivable KPIs (DSO, CEI, aging) · spreadsheet modelling · automation</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="main">
+        <span class="kind">Standard operating procedure</span>
+        <h2>Month-End AR Reconciliation SOP</h2>
+        <p>How the desk closes the month in six business days. The ledger is tied out, every open invoice is sorted into one of six outcomes, and each list goes to the team that can clear it. It includes roles for six teams, controls and approval limits, and a fully worked September 2026 close.</p>
+        <div class="links">
+          <a class="btn primary" href="documents/Westline-Month-End-AR-Reconciliation-SOP.pdf" target="_blank" rel="noopener">Read the SOP (PDF)</a>
+        </div>
+      </div>
+      <div class="side">
+        <h3>What it shows</h3>
+        <ul>
+          <li>1,981 open invoices worth $841,422 classed and tied to the ledger within $141</li>
+          <li>A decision flow that keeps money the customer doesn't owe off collection calls</li>
+          <li>23 old unexplained balances traced to six root causes</li>
+        </ul>
+        <p class="skills">Account reconciliation · process design · internal controls</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="main">
+        <span class="kind">Root-cause analysis</span>
+        <h2>Chargeback and Refund Root-Cause Map</h2>
+        <p>An analysis of 175 card chargebacks and 430 escalations. Most disputes were refunds the company already owed but had not paid. The map follows a return across six teams, shows where it stalled, and sets out the fixes and the weekly review that keeps them in place.</p>
+        <div class="links">
+          <a class="btn primary" href="documents/Westline-Chargeback-Refund-Root-Cause-Map.pdf" target="_blank" rel="noopener">Read the analysis (PDF)</a>
+        </div>
+      </div>
+      <div class="side">
+        <h3>What it shows</h3>
+        <ul>
+          <li>87% of chargebacks traced to six failed hand-offs between teams</li>
+          <li>The evidence that wins genuine disputes, at a 77% win rate</li>
+          <li>Controls against broker orders and impersonation fraud</li>
+        </ul>
+        <p class="skills">Dispute management · cross-team process fixes · fraud awareness</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="main">
+        <span class="kind">Training deck · 19 slides</span>
+        <h2>Collections Team Playbook</h2>
+        <p>How a new specialist reaches full pace in 30 days. It covers when to call, a six-step call framework, scripts for first calls and card payments, objection handling, promise rules, escalations, fraud red flags, calling US shops from India, the quality scorecard and coaching rhythm.</p>
+        <div class="links">
+          <a class="btn primary" href="documents/Westline-Collections-Team-Playbook.pdf" target="_blank" rel="noopener">View the deck (PDF)</a>
+        </div>
+      </div>
+      <div class="side">
+        <h3>What it shows</h3>
+        <ul>
+          <li>A week-by-week ramp from 30 to 80 dials, matched by the August hire's actual numbers</li>
+          <li>A 100-point quality scorecard tied to the call framework</li>
+          <li>A day-30 sign-off checklist a manager can audit</li>
+        </ul>
+        <p class="skills">Team training · coaching · quality assurance · customer communication</p>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    <p>All four projects share one data model: about 700 credit accounts, 19 months of invoices, payments, calls, requests, chargebacks and escalations.</p>
+    <p>Built October 2026.</p>
+  </footer>
+</div>
